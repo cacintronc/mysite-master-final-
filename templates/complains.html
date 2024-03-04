@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>{{ app_data['description'] }}</h1>
+    <h2>Services page</h2>
+    <br/>
+    <h3>Make a complaint</h3>
+    <div class="container">
+    <form action="" method="post">
+        <textarea rows="10" cols="50" name="complaint"></textarea>
+        <input class="btn btn-default" type="submit" value="Complain"/>
+    </form>
+    </div>
+    <br/>
+    <h3>Previous Complaints</h3>
+    {% for complaint in complaints %}
+    <hr/>
+    <p>{{ complaint['complaint'] }} </p>
+    <strong>Posted at:</strong> {{ complaint['time'] }} <br>
+    {% endfor %}
+{% endblock %}
